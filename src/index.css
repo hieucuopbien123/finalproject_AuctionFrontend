@@ -1,0 +1,226 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  font-family: ui-sans-serif, system-ui, Inter, Avenir, Helvetica, Arial, sans-serif, -apple-system, 
+    BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-rendering: optimizeLegibility;
+  color-scheme: light dark;
+  /* image-rendering: pixelated;  */
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  font-size: clamp(14px, 0.8194rem + 0.2222vw, 16px); 
+}
+html{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+body{
+  height: 100%;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#root{
+  width: 100%;
+  height: 100%;
+  -webkit-touch-callout: none;
+}
+img{
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: all 0.2s;
+}
+a{
+  text-decoration: none;
+}
+button{
+  text-transform: none;
+  cursor: pointer;
+}
+button:disabled{
+  cursor: not-allowed;
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Poppins';
+  src: url(./fonts/Poppin/Poppins-Regular.ttf) format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(./fonts/Poppin/Poppins-Bold.ttf) format('truetype');
+  font-weight: bolder;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(./fonts/Poppin/Poppins-SemiBold.ttf) format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(./fonts/Poppin/Poppins-Light.ttf) format('truetype');
+  font-weight: lighter;
+}
+
+/* scrollbar */
+::-webkit-scrollbar
+{
+  height: 8px;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: rgb(125, 123, 123);
+  border-radius: 10px;
+}
+
+.biggerScrollbar::-webkit-scrollbar
+{
+  height: 8px;
+  width: 8px;
+}
+
+/* Text bé: 10-14*/ 
+.fontSmallSize {
+  /* font-size: clamp(0.625rem, 0.5139rem + 0.4444vw, 0.875rem) !important; */
+  font-size: clamp(10px, 0.4375rem + 0.5vw, 14px) !important;
+}
+/* Text thường: 14-16 */ 
+.fontNomSize {
+  font-size: clamp(14px, 0.8194rem + 0.2222vw, 16px) !important;
+}
+/* Chữ to: 16-20 */
+.bigTextSize {
+  font-size: clamp(16px, 0.8889rem + 0.4444vw, 20px) !important;
+}
+/* Title: 20-24 */
+.titleSize{
+  font-size: clamp(20px, 1.1389rem + 0.4444vw, 24px) !important;
+}
+/* Bigger: 25-35 */
+.biggerSize{
+  font-size: clamp(25px, 1.4236rem + 0.5556vw, 35px) !important;
+}
+/* Text khổng lồ: 30-40 */
+.fontSuperSize {
+  font-size: clamp(30px, 1.5972rem + 1.1111vw, 40px) !important;
+}
+
+.specialButton {
+  background: linear-gradient(273deg, #6780e0, #0cc8f8, #7860e4, #5039cb);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 44%}
+  50%{background-position:100% 57%}
+  100%{background-position:0% 44%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 44%}
+  50%{background-position:100% 57%}
+  100%{background-position:0% 44%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 44%}
+  50%{background-position:100% 57%}
+  100%{background-position:0% 44%}
+}
+
+.limitText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.limitText2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.glowDark {
+  box-shadow: 0 0 100px #545454d1;
+}
+
+.glowLight {
+  box-shadow: 0 0 100px #bdbabaed;
+}
+
+.cardHover {
+  box-shadow: 0px 0px 15px 4px rgba(103,103,103,0.74) !important;
+  -webkit-box-shadow: 0px 0px 15px 4px rgba(103,103,103,0.74) !important;
+  -moz-box-shadow: 0px 0px 15px 4px rgba(103,103,103,0.74) !important;
+}
+
+.loading {
+  border: 5px solid #cdcfd6;
+  border-top-color: #777e90;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  animation: spin 1s linear infinite;
+}
+
+.smallloading {
+  border: 5px solid #cdcfd6;
+  border-top-color: #777e90;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #777e90 !important;
+}
+
+.auctionDetailLayout {
+  grid-template-areas: 
+    "A B" 
+    "C B"
+  ;
+  grid-template-columns: minmax(0, 500px) minmax(0, 1fr);
+}
+
+@media only screen and (max-width: 1100px) {
+  .auctionDetailLayout {
+    grid-template-areas: 
+      "A"
+      "B"
+      "C"
+    ;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  
+}
